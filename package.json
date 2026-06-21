@@ -1,0 +1,24 @@
+{
+  "name": "typeahead",
+  "version": "1.0.0",
+  "description": "Type-ahead search system for scale",
+  "scripts": {
+    "build": "tsc",
+    "build:web": "tsc --project tsconfig.web.json",
+    "start": "node dist/cmd/server.js",
+    "dev": "ts-node src/cmd/server.ts",
+    "ingest": "ts-node src/cmd/ingest.ts",
+    "ringtest": "ts-node src/cmd/ringtest.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0",
+    "typescript": "^5.7.0",
+    "ts-node": "^10.9.2"
+  }
+}
