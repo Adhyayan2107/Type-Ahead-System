@@ -40,8 +40,11 @@ export class Store {
     await Promise.all(promises);
   }
 
-  async loadAll(fn: (qc: QueryCount) => void): Promise<void> {
-    const result = await this.pool.query('SELECT query, count FROM queries');
+  async loadAll(fn: (qc: QueryCount) => void, limit = 200_000): Promise<void> {
+    const result = await this.pool.query(
+      'SELECT query, count FROM queries ORDER BY count DESC LIMIT $1',
+      [limit]
+    );
     for (const row of result.rows as { query: string; count: number }[]) {
       fn({ query: row.query, count: row.count });
     }
