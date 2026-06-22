@@ -119,7 +119,7 @@ Postgres runs on host port **5433** (not the default 5432) to avoid colliding wi
 
 ### 3. Get the dataset
 
-This project uses the AOL query log (Kaggle: "AOL User Session Collection"). Download it and unzip it. You will get tab-separated files named `user-ct-test-collection-NN.txt`.
+This project uses the AOL query log (Kaggle: "AOL User Session Collection").Download it and unzip it [DataSet link](https://www.kaggle.com/datasets/dineshydv/aol-user-session-collection-500k). You will get tab-separated files named `user-ct-test-collection-NN.txt`.
 
 The dataset is **not** committed to this repo: it is large and, given the AOL log's history, not ours to redistribute. Only the query text is used; all user-identifying columns (user ID, timestamps, clicked URLs) are discarded during ingestion.
 
